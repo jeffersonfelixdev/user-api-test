@@ -67,13 +67,13 @@ app.register(fastifyJwt, {
 app.register(fastifyCors)
 
 app.register(createUserRoute)
-app.register(signInRoute)
-app.register(userProfileRoute)
-app.register(updateProfileRoute)
 app.register(listAllUsersRoute)
+app.register(updateProfileRoute)
+app.register(getUserRoute)
+app.register(signInRoute)
 app.register(adminEditUser)
 app.register(deleteUserRoute)
-app.register(getUserRoute)
+app.register(userProfileRoute)
 
 app.listen({ host: '0.0.0.0', port: 8000 }).then(() => {
   logInfo('Server running on port 8000')

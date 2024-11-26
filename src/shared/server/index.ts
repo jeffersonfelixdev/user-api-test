@@ -15,6 +15,7 @@ import { env } from '../../config/env'
 import { adminEditUser } from '../../modules/user/routes/admin-edit-user'
 import { createUserRoute } from '../../modules/user/routes/create-user'
 import { deleteUserRoute } from '../../modules/user/routes/delete-user'
+import { getUserRoute } from '../../modules/user/routes/get-user'
 import { listAllUsersRoute } from '../../modules/user/routes/list-all-users'
 import { signInRoute } from '../../modules/user/routes/sign-in'
 import { updateProfileRoute } from '../../modules/user/routes/update-profile'
@@ -72,6 +73,7 @@ app.register(updateProfileRoute)
 app.register(listAllUsersRoute)
 app.register(adminEditUser)
 app.register(deleteUserRoute)
+app.register(getUserRoute)
 
 app.listen({ host: '0.0.0.0', port: 8000 }).then(() => {
   logInfo('Server running on port 8000')

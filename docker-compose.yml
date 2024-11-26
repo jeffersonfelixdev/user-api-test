@@ -1,0 +1,20 @@
+name: user-api-test
+
+services:
+  mysql:
+    container_name: mysql
+    image: bitnami/mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ROOT_PASSWORD=Root_aAbBcC12_3
+      - MYSQL_DATABASE=mydb
+    volumes:
+      - mysql_data:/bitnami/mysql/data
+    expose:
+      - 3306
+
+volumes:
+  mysql_data:

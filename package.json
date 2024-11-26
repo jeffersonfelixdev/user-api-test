@@ -1,0 +1,50 @@
+{
+  "name": "user-api-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_DEBUG=server:* tsx watch src/shared/server/index.ts",
+    "prelint": "tsc --noemit",
+    "lint": "eslint ./src --max-warnings 0",
+    "lint:fix": "eslint ./src --fix",
+    "db:migrate": "npx prisma migrate dev",
+    "db:deploy": "npx prisma migrate deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "build": "tsup",
+    "start": "cross-env NODE_DEBUG=server:* node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@jsfelix/eslint-config": "^1.2.10",
+    "@types/jwk-to-pem": "^2.0.3",
+    "@types/node": "^22.9.3",
+    "@vitest/coverage-v8": "^2.1.5",
+    "@vitest/ui": "^2.1.5",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.1",
+    "prisma": "^5.22.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "5.5",
+    "vitest": "^2.1.5"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "@fastify/jwt": "^9.0.1",
+    "@fastify/swagger": "^9.4.0",
+    "@fastify/swagger-ui": "^5.1.0",
+    "@prisma/client": "^5.22.0",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.1.0",
+    "fastify-type-provider-zod": "^4.0.2",
+    "iti": "^0.7.0",
+    "jwk-to-pem": "^2.0.7",
+    "zod": "^3.23.8"
+  }
+}
